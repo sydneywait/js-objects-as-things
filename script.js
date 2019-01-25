@@ -16,23 +16,23 @@ const joshObject = {
     drinkMakes: ["americano", "cappucino", "espresso", "latte"],
     makeDrink: function makeDrink(drinkParam) {
         let returnSentence = `Sorry, ${this.name} can't make a ${drinkParam}`
-        for(let i = 0; i<this.drinkMakes.length; i++){
-        if(drinkParam === this.drinkMakes[i]){
-            returnSentence = `${this.name} made you this ${drinkParam}`
-        // console.log(`${this.name} made you this ${drinkParam}`)
-    }
-        // else{console.log(`${this.name} cannot make ${drinkParam}`)
-            
-        }return returnSentence;
-        }
-    }
-    // LearnNewDrink: function newDrink(newDrinkParam) {
-    //     this.drinkMakes.push(newDrinkParam)
+        for (let i = 0; i < this.drinkMakes.length; i++) {
+            if (drinkParam === this.drinkMakes[i]) {
+                returnSentence = `${this.name} made you this ${drinkParam}`
+                // console.log(`${this.name} made you this ${drinkParam}`)
+            }
+            // else{console.log(`${this.name} cannot make ${drinkParam}`)
 
-    // },
-    // changeName: function newName(newNameParam){
-    //     this.name = newNameParam
-    // }
+        } return returnSentence;
+    }
+}
+// LearnNewDrink: function newDrink(newDrinkParam) {
+//     this.drinkMakes.push(newDrinkParam)
+
+// },
+// changeName: function newName(newNameParam){
+//     this.name = newNameParam
+// }
 let catchSentence1 = joshObject.makeDrink("cappucino");
 console.log(catchSentence1);
 
@@ -75,6 +75,7 @@ const coffeeShopStaff = {
 }
 console.log("this is the first array", coffeeShopStaff);
 
+//You can change the employees in the array and where they fit
 coffeeShopStaff.fulltime = [jordanObject, kimObject];
 coffeeShopStaff.partTime = [joshObject];
 
@@ -85,12 +86,6 @@ console.log(coffeeShopStaff);
 // 3. Call the method and pass in any drink (string) you want
 // 4. Call the method (be sure to catch the returned string in a variable!)
 // Bous: If you have time, refactor your method so that it checks to see if the employee knows how to make the drink (i.e. if it's in the array of drinks they know how to make). If they do, you should return the string from step 2. If not, you should return a string that says "No can do!"
-
-
-
-
-
-
 
 
 // A simple representation of an expense resource, in code, would look like this.
@@ -168,14 +163,14 @@ const expenseReport = {
 
 // Practice: Represent your Pet
 // Create an object that represents your pet.
- // Name property with a string value.
+// Name property with a string value.
 // Species property with a string value.
 // Nicknames property with an array value. Array contains strings.
 // Age property with an integer value
 
 const petObject = {
     name: "Fido",
-    species: "dog", 
+    species: "dog",
     nicknames: ["Spot", "Butch", "Fluffy Buns"],
     age: 10
 }
@@ -227,5 +222,138 @@ restaurant.placeOrder(burgerComboMeal)
 // Output all orders to the console using console.table()
 console.table(restaurant.orders)
 
+// Challenge: Political Campaign
+// Challenges are optional exercises that you should attempt only if you've completed the practice exercises and understand the concepts.
+
+// You have volunteered your time to a local political candidate, Elizabeth Sanger, who wants to become a US representative in Congress for your district. Unfortunately, the team discovered that you're a software developer, so they have begged you to build an application that lets them track volunteers, and store information about Elizabeth and her campaign.
+
+// Your job is to define the different objects and arrays, their structure, and the corresponding properties for each, to represent the following information about Elizabeth's campaign.
+
+// Her congressional district (you can use yours here)
+// Her platform statements for the following issues.
+// -Taxes
+// -Jobs
+// -Infrastructure
+// -Health care
+// -Crime and enforcement
+// URL for donation form
+// Calendar of events
+// Volunteer information
+// -Name
+// -Address
+// -Email
+// -Phone number
+// -Availability
+// -What activities each one is willing to do (e.g. answering phone calls, taking polls, etc.)
+// Biography
+// Image gallery
+// -Head shot
+// -Picture of family
+// -Picture of constituents
+// Mission statement
+// URL for registering to vote
+
+const elizabethObject = {
+    congressDistrict: "19th",
+    platformStatements:
+        ["Taxes are the worst", "Jobs are the best", "Infrastructure is important", "Health-care is also important"],
+    donationURL: "http://givememoney.com",
+    eventCalendar:
+        [
+            {
+                activity: "Feeding the Homeless",
+                date: "1/27/19",
+                location: "Huntington City Mission",
+                time: "8:00 am"
+            },
+            {
+                activity: "Ribbon Cutting for NewForce",
+                date: "2/08/19",
+                location: "Chase Bank CoWorks Space, Mezzanine",
+                time: "10:00 am"
+            },
+            {
+                activity: "Visiting sick children",
+                date: "3/05/19",
+                location: "Cabell Huntington Hospital",
+                time: "3:00 pm"
+            }
+        ],
+    volunteerInfo:
+        [
+            {
+                name: "Becky",
+                address: "123 First Street",
+                email: "becky@email.com",
+                phoneNumber: "304-456-6789",
+                available: true,
+                activities: ["knocking doors", "raising money", "licking boots"]
+            },
+            {
+                name: "Charlie",
+                address: "456 Ninth Street",
+                email: "charlie@email.com",
+                phoneNumber: "304-123-6789",
+                available: true,
+                activities: ["knocking doors", "raising money", "posting flyers"]
+            },
+            {
+                name: "Harold",
+                address: "999 20th street",
+                email: "harold@email.com",
+                phoneNumber: "304-321-9457",
+                available: false,
+                activities: ["writing speeches", "raising money", "rubbing elbows"]
+            }
+        ],
+        addVolunteer: function AddVolunteertoObject(nameIn, addressIn, emailIn, phoneNumberIn, availableIn, activitiesIn){
+            this.volunteerInfo.push({name: nameIn, address: addressIn, email: emailIn, phoneNumber: phoneNumberIn, available: availableIn, activities: activitiesIn})
+        },
+    biography: "Elizabeth started out as a grocery store clerk but felt she could do a better job in politics than most other politicians because she actually tells the truth",
+    changeBio: function changeBiography(newBio) {
+        this.biography = newBio;
+
+    },
+    imageGallery:
+        [
+            { image: "src", caption: "Head Shot" },
+            { image: "src", caption: "family" },
+            { image: "src", caption: "Constituents" }
+        ],
+    addImage: function addToImageGallery(newImage, text) {
+        this.imageGallery.push({image: newImage, caption: text})
+     
+        },
+    missionStatement: "Elizabeth will do her best to server her constituents",
+    registrationURL: "vote.org"
+}
+
+
+elizabethObject.addImage("src2", "mansion")
+elizabethObject.addVolunteer("Shannon", "985 Main st", "shannon@email.com", "456-896-4567", true, ["anything!"])
+elizabethObject.changeBio("I decided to become a politician for the money")
+
+console.table(elizabethObject)
+// After you have defined all the objects for representing the data about Elizabeth's campaign, write a corresponding function for each one whose purpose is to change the state of the object. Then use your functions to modify the existing data.
+
+// Things to think about.
+
+// Am I modifying an array? Then the function argument should be added to the target array with the push() method.
+// Am I modifying an object? Then I should pass both the key name to be modified, and its corresponding value.
+// This challenge is for you to practice writing functions, so the more you can write, the better. It helps make neural connections in your brain at this point since you're still building your software vocabulary.
+
+// Example:
+
+// function addToImageGallery(newImage) {
+//     ...
+// }
+
+// function changeBiography (newBiography) {
+//     ...
+// }
+
+// function changePlatform (topic, newPlatformStatement) {
+//     ...
+// }
 
 
