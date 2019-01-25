@@ -1,3 +1,57 @@
+// 1. Build three objects. Each one should represent an employee at the coffee shop.
+// 2. Each employee object should have the following properties:
+// - a name
+// - a startDate
+// - a jobTitle
+// - a payRate
+// - a favoriteDrink
+// - an array of drinks they know how to make
+
+const joshObject = {
+    name: "Josh",
+    startDate: "Nov 1 2017",
+    jobTitle: "Barista",
+    payRate: "$15/hr",
+    favoriteDrink: "Mocha with soy milk",
+    drinkMakes: ["americano", "cappucino", "espresso", "latte"]
+}
+const kimObject = {
+    name: "Kim",
+    startDate: "Jan 1 2017",
+    jobTitle: "Barista",
+    payRate: "$18/hr",
+    favoriteDrink: "Mocha with soy milk",
+    drinkMakes: ["americano", "cappucino", "espresso", "latte", "smoothies"]
+}
+const jordanObject = {
+    name: "Jordan",
+    startDate: "Jul 1 2017",
+    jobTitle: "Barista",
+    payRate: "$20/hr",
+    favoriteDrink: "Mocha with soy milk",
+    drinkMakes: ["americano", "cappucino"]
+}
+
+// 2. Build another object called coffeeShopStaff
+// 3. This object should have two properties:
+// - a property of fullTime that holds an array of full time staff members
+// - a property of partTime that holds an array of part time staff members
+// - Put two of your employee objects from steps 1 & 2 into the part time array. Put one of them in the full time array.
+const coffeeShopStaff = {
+    fulltime: [jordanObject],
+    partTime: [joshObject, kimObject]
+}
+console.log(coffeeShopStaff);
+
+coffeeShopStaff.fulltime =[jordanObject, kimObject];
+coffeeShopStaff.partTime = [joshObject];
+
+
+
+
+
+
+
 
 // A simple representation of an expense resource, in code, would look like this.
 const expense = {
