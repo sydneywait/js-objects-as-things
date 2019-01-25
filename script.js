@@ -62,8 +62,6 @@ const jordanObject = {
     }
 }
 
-
-
 // 2. Build another object called coffeeShopStaff
 // 3. This object should have two properties:
 // - a property of fullTime that holds an array of full time staff members
@@ -149,17 +147,17 @@ const expenseReport = {
 // // call the function
 // rufusTheDog.bark()
 
-// const rufusTheDog = {
-//     age: 4,
-//     species: "Dalmatian",
-//     bark: function (something) {
-//         window.alert(`Rufus barks 'WOOF!' at ${something}`)
-//     }
-// }
+const rufusTheDog = {
+    age: 4,
+    species: "Dalmatian",
+    bark: function (something) {
+        window.alert(`Rufus barks 'WOOF!' at ${something}`)
+    }
+}
 
-// rufusTheDog.bark("mailman")
-// rufusTheDog.bark("leaf")
-// rufusTheDog.bark("child")
+rufusTheDog.bark("mailman")
+rufusTheDog.bark("leaf")
+rufusTheDog.bark("child")
 
 // Practice: Represent your Pet
 // Create an object that represents your pet.
@@ -279,6 +277,9 @@ const elizabethObject = {
                 time: "3:00 pm"
             }
         ],
+        addEvent: function(eventObject){
+            this.eventCalendar.push(eventObject);
+        },
     volunteerInfo:
         [
             {
@@ -306,14 +307,13 @@ const elizabethObject = {
                 activities: ["writing speeches", "raising money", "rubbing elbows"]
             }
         ],
-        addVolunteer: function(name, addressIn, emailIn, phoneNumberIn, availableIn, activitiesIn){
-            this.volunteerInfo.push({name: name, address: addressIn, email: emailIn, phoneNumber: phoneNumberIn, available: availableIn, activities: activitiesIn})
+        addVolunteer: function(name, address, email, phoneNumber, available, activities){
+            this.volunteerInfo.push({name: name, address: address, email: email, phoneNumber: phoneNumber, available: available, activities: activities})
         },
     biography: "Elizabeth started out as a grocery store clerk but felt she could do a better job in politics than most other politicians because she actually tells the truth",
     changeBio: function(newBio) {
         this.biography = newBio;
         console.log(this)
-
     },
     imageGallery:
         [
@@ -323,16 +323,31 @@ const elizabethObject = {
         ],
     addImage: function(newImage, text) {
         this.imageGallery.push({image: newImage, caption: text})
-     
         },
     missionStatement: "Elizabeth will do her best to serve her constituents",
     registrationURL: "vote.org"
 }
 
 
-elizabethObject.addImage("src2", "mansion")
-elizabethObject.addVolunteer("Shannon", "985 Main st", "shannon@email.com", "456-896-4567", true, ["anything!"])
-elizabethObject.changeBio("I decided to become a politician for the money")
+//create a new event object
+const newEvent = {
+    activity: "Riding Horses",
+    date: "1/30/19",
+    location: "Melody Farms",
+    time: "11:00 am"
+
+}
+
+//add a new event using an object argument.
+elizabethObject.addEvent(newEvent);
+console.table(elizabethObject.eventCalendar);
+elizabethObject.addImage("src2", "mansion");
+
+//add a new volunteer object by assigning values to the keys defined in the function
+elizabethObject.addVolunteer("Shannon", "985 Main st", "shannon@email.com", "456-896-4567", true, ["anything!"]);
+
+//change the bio by calling the changeBio function
+elizabethObject.changeBio("I decided to become a politician for the money");
 
 console.table(elizabethObject)
 // After you have defined all the objects for representing the data about Elizabeth's campaign, write a corresponding function for each one whose purpose is to change the state of the object. Then use your functions to modify the existing data.
