@@ -306,12 +306,13 @@ const elizabethObject = {
                 activities: ["writing speeches", "raising money", "rubbing elbows"]
             }
         ],
-        addVolunteer: function AddVolunteertoObject(nameIn, addressIn, emailIn, phoneNumberIn, availableIn, activitiesIn){
-            this.volunteerInfo.push({name: nameIn, address: addressIn, email: emailIn, phoneNumber: phoneNumberIn, available: availableIn, activities: activitiesIn})
+        addVolunteer: function(name, addressIn, emailIn, phoneNumberIn, availableIn, activitiesIn){
+            this.volunteerInfo.push({name: name, address: addressIn, email: emailIn, phoneNumber: phoneNumberIn, available: availableIn, activities: activitiesIn})
         },
     biography: "Elizabeth started out as a grocery store clerk but felt she could do a better job in politics than most other politicians because she actually tells the truth",
-    changeBio: function changeBiography(newBio) {
+    changeBio: function(newBio) {
         this.biography = newBio;
+        console.log(this)
 
     },
     imageGallery:
@@ -320,11 +321,11 @@ const elizabethObject = {
             { image: "src", caption: "family" },
             { image: "src", caption: "Constituents" }
         ],
-    addImage: function addToImageGallery(newImage, text) {
+    addImage: function(newImage, text) {
         this.imageGallery.push({image: newImage, caption: text})
      
         },
-    missionStatement: "Elizabeth will do her best to server her constituents",
+    missionStatement: "Elizabeth will do her best to serve her constituents",
     registrationURL: "vote.org"
 }
 
