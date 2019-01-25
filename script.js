@@ -64,9 +64,6 @@ const jordanObject = {
 
 
 
-
-
-
 // 2. Build another object called coffeeShopStaff
 // 3. This object should have two properties:
 // - a property of fullTime that holds an array of full time staff members
@@ -168,4 +165,67 @@ const expenseReport = {
 // rufusTheDog.bark("mailman")
 // rufusTheDog.bark("leaf")
 // rufusTheDog.bark("child")
+
+// Practice: Represent your Pet
+// Create an object that represents your pet.
+ // Name property with a string value.
+// Species property with a string value.
+// Nicknames property with an array value. Array contains strings.
+// Age property with an integer value
+
+const petObject = {
+    name: "Fido",
+    species: "dog", 
+    nicknames: ["Spot", "Butch", "Fluffy Buns"],
+    age: 10
+}
+
+
+// Practice: Fast Food Ordering
+// You need to write code to represent the process of ordering food at a fast food joint. Your restaurant is Bob's Burgers, and you have some starter code below. The object will have two behaviors that you must define.
+
+// The object should have a property named orders that is an array. You will need to define this.
+// Define a function to represent the behavior of placing an order. It should accept one argument named meal. This argument will be an object. There is starter code provided.
+// Define a function to represent the behavior of getting all orders. It should return the order property (hint: this). You will need to define this.
+
+
+const restaurant = {
+    name: "Bob's Burgers",
+    orders: [],
+    placeOrder: function (meal) {
+        this.orders.push(meal)
+
+    }
+}
+
+// Each meal object should have three properties: sandwichType, fries (true or false), and drinkSize.
+const chickenComboMeal = {
+    sandwichType: "grilled chicken",
+    fries: true,
+    drinkSize: "small"
+}
+
+const burgerComboMeal = {
+    sandwichType: "burger",
+    fries: true,
+    drinkSize: "medium"
+}
+
+const chzburgerComboMeal = {
+    sandwichType: "cheeseburger",
+    fries: false,
+    drinkSize: "large"
+}
+
+// Place an order
+restaurant.placeOrder(chickenComboMeal)
+restaurant.placeOrder(chzburgerComboMeal)
+restaurant.placeOrder(burgerComboMeal)
+
+// Invoke the function to return the list of all orders
+
+// Output all orders to the console using console.table()
+console.table(restaurant.orders)
+
+
 
