@@ -13,15 +13,42 @@ const joshObject = {
     jobTitle: "Barista",
     payRate: "$15/hr",
     favoriteDrink: "Mocha with soy milk",
-    drinkMakes: ["americano", "cappucino", "espresso", "latte"]
-}
+    drinkMakes: ["americano", "cappucino", "espresso", "latte"],
+    makeDrink: function makeDrink(drinkParam) {
+        let returnSentence = `Sorry, ${this.name} can't make a ${drinkParam}`
+        for(let i = 0; i<this.drinkMakes.length; i++){
+        if(drinkParam === this.drinkMakes[i]){
+            returnSentence = `${this.name} made you this ${drinkParam}`
+        // console.log(`${this.name} made you this ${drinkParam}`)
+    }
+        // else{console.log(`${this.name} cannot make ${drinkParam}`)
+            
+        }return returnSentence;
+        }
+    }
+    // LearnNewDrink: function newDrink(newDrinkParam) {
+    //     this.drinkMakes.push(newDrinkParam)
+
+    // },
+    // changeName: function newName(newNameParam){
+    //     this.name = newNameParam
+    // }
+let catchSentence1 = joshObject.makeDrink("cappucino");
+console.log(catchSentence1);
+
+let catchSentence2 = joshObject.makeDrink("macchiato");
+console.log(catchSentence2);
+
 const kimObject = {
     name: "Kim",
     startDate: "Jan 1 2017",
     jobTitle: "Barista",
     payRate: "$18/hr",
     favoriteDrink: "Mocha with soy milk",
-    drinkMakes: ["americano", "cappucino", "espresso", "latte", "smoothies"]
+    drinkMakes: ["americano", "cappucino", "espresso", "latte", "smoothies"],
+    makeDrink: function makeDrink(drinkParam) {
+        console.log(`${this.name} made you this ${drinkParam}`)
+    }
 }
 const jordanObject = {
     name: "Jordan",
@@ -29,8 +56,16 @@ const jordanObject = {
     jobTitle: "Barista",
     payRate: "$20/hr",
     favoriteDrink: "Mocha with soy milk",
-    drinkMakes: ["americano", "cappucino"]
+    drinkMakes: ["americano", "cappucino"],
+    makeDrink: function makeDrink(drinkParam) {
+        console.log(`${this.name} made you this ${drinkParam}`)
+    }
 }
+
+
+
+
+
 
 // 2. Build another object called coffeeShopStaff
 // 3. This object should have two properties:
@@ -41,10 +76,18 @@ const coffeeShopStaff = {
     fulltime: [jordanObject],
     partTime: [joshObject, kimObject]
 }
+console.log("this is the first array", coffeeShopStaff);
+
+coffeeShopStaff.fulltime = [jordanObject, kimObject];
+coffeeShopStaff.partTime = [joshObject];
+
 console.log(coffeeShopStaff);
 
-coffeeShopStaff.fulltime =[jordanObject, kimObject];
-coffeeShopStaff.partTime = [joshObject];
+// 1. Remember your employee objects from up there? Give one of them a method called makeCoffeDrink
+// 2. This method should accept a parameter of drink and return a string of "Here's your [drink]!" 
+// 3. Call the method and pass in any drink (string) you want
+// 4. Call the method (be sure to catch the returned string in a variable!)
+// Bous: If you have time, refactor your method so that it checks to see if the employee knows how to make the drink (i.e. if it's in the array of drinks they know how to make). If they do, you should return the string from step 2. If not, you should return a string that says "No can do!"
 
 
 
@@ -103,26 +146,26 @@ const expenseReport = {
 
 // They are just regular functions, but software developers call them methods within the context of an object because they are defining behaviors of a specific thing.
 
-const rufusTheDog = {
-    age: 4,                 // Property
-    species: "Dalmatian",   // Property
-    bark: function () {     // Method
-        window.alert("WOOF!")
-    }
-}
+// const rufusTheDog = {
+//     age: 4,                 // Property
+//     species: "Dalmatian",   // Property
+//     bark: function () {     // Method
+//         window.alert("WOOF!")
+//     }
+// }
 
-// call the function
-rufusTheDog.bark()
+// // call the function
+// rufusTheDog.bark()
 
-const rufusTheDog = {
-    age: 4,
-    species: "Dalmatian",
-    bark: function (something) {
-        window.alert(`Rufus barks 'WOOF!' at ${something}`)
-    }
-}
+// const rufusTheDog = {
+//     age: 4,
+//     species: "Dalmatian",
+//     bark: function (something) {
+//         window.alert(`Rufus barks 'WOOF!' at ${something}`)
+//     }
+// }
 
-rufusTheDog.bark("mailman")
-rufusTheDog.bark("leaf")
-rufusTheDog.bark("child")
+// rufusTheDog.bark("mailman")
+// rufusTheDog.bark("leaf")
+// rufusTheDog.bark("child")
 
